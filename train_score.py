@@ -40,14 +40,13 @@ from jaxgeometry.manifolds import *
 from jaxgeometry.statistics.score_matching import train_s1, train_s2, train_s1s2, train_t, train_p, TMSampling, LocalSampling, \
     EmbeddedSampling, ProjectionSampling
 from jaxgeometry.statistics.score_matching.model_loader import load_model
-from ManLearn.train_MNIST import load_dataset as load_mnist
 
 #%% Args Parser
 
 def parse_args():
     parser = argparse.ArgumentParser()
     # File-paths
-    parser.add_argument('--manifold', default="Sphere",
+    parser.add_argument('--manifold', default="Euclidean",
                         type=str)
     parser.add_argument('--dim', default=2,
                         type=int)
