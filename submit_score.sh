@@ -1,9 +1,9 @@
 #!/bin/sh
 #BSUB -q gpuv100
-#BSUB -J Sphere50_s1tdsm
+#BSUB -J HypParaboloid_s1tdsm
 #BSUB -n 4
 #BSUB -gpu "num=1:mode=exclusive_process"
-#BSUB -W 4:00
+#BSUB -W 24:00
 #BSUB -R "rusage[mem=10GB]"
 #BSUB -u fmry@dtu.dk
 #BSUB -B
@@ -18,8 +18,8 @@ module swap cudnn/v8.9.1.23-prod-cuda-12.X
 module swap python3/3.10.12
 
 python3 train_score.py \
-    --manifold Sphere \
-    --dim 50 \
+    --manifold HypParaboloid \
+    --dim 2 \
     --s1_loss_type dsm \
     --s2_loss_type dsm \
     --load_model 0 \
